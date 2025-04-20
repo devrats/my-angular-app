@@ -1,0 +1,158 @@
+/* Container styling */
+.container {
+  padding: 40px;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(to right, #eef2f3, #8e9eab);
+  min-height: 100vh;
+}
+
+/* Header */
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Table card */
+.table {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 30px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Topic row */
+.topic-row {
+  margin-bottom: 10px;
+}
+
+/* Topic header (collapsible row) */
+.topic-header {
+  cursor: pointer;
+  padding: 12px 20px;
+  background: #e0f7fa;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #00796b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.topic-header:hover {
+  background: #b2ebf2;
+}
+
+/* Table for problems */
+.problems-table {
+  margin-top: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.problems-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fafafa;
+}
+
+/* Table headings */
+.problems-table th {
+  background-color: #00acc1;
+  color: white;
+  padding: 12px;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.problems-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+/* Link styles */
+.problems-table a {
+  color: #0288d1;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.problems-table a:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox style */
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .table {
+    padding: 15px;
+  }
+
+  .problems-table table,
+  .problems-table thead,
+  .problems-table tbody,
+  .problems-table th,
+  .problems-table td,
+  .problems-table tr {
+    display: block;
+  }
+
+  .problems-table thead {
+    display: none;
+  }
+
+  .problems-table td {
+    position: relative;
+    padding-left: 50%;
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .problems-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 16px;
+    width: 45%;
+    padding-right: 10px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+}
+
+.save-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.save-button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.save-button:active {
+  background-color: #388e3c;
+  transform: scale(0.98);
+}

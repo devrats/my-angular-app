@@ -1,0 +1,70 @@
+.progress-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #f4f6f8;
+  border-radius: 10px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.topic-card {
+  background-color: white;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.topic-header {
+  padding: 16px 20px;
+  background-color: #1976d2;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-icon {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.problems-list {
+  padding: 15px 25px;
+  background-color: #f9f9f9;
+}
+
+.status-section {
+  margin-bottom: 10px;
+}
+
+.status-title {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.status-title.complete {
+  color: green;
+}
+
+.status-title.incomplete {
+  color: #e53935;
+}
+
+ul {
+  list-style: none;
+  padding-left: 10px;
+}
+
+li {
+  margin-bottom: 6px;
+  font-size: 16px;
+}

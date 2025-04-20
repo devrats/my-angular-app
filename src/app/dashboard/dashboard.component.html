@@ -1,0 +1,40 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <h2>DSA Topics</h2>
+  <div class="table">
+    <div class="topic-row" *ngFor="let element of topics; let i = index">
+      <div class="topic-header" (click)="toggleTopic(i)">
+        <strong>{{ element.topic }}</strong>
+        <span>{{ expandedTopicIndex === i ? '▲' : '▼' }}</span>
+      </div>
+
+      <div *ngIf="expandedTopicIndex === i" class="problems-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Level</th>
+              <th>YouTube</th>
+              <th>LeetCode</th>
+              <th>Article</th>
+              <th>Opted</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let problem of element.problems; let j = index" [formGroup]="problemForm(i)">
+              <td>{{ problem.title }}</td>
+              <td>{{ problem.difficulty }}</td>
+              <td><a [href]="problem.youtube" target="_blank">Link</a></td>
+              <td><a [href]="problem.leetcode" target="_blank">Link</a></td>
+              <td><a [href]="problem.article" target="_blank">Link</a></td>
+              <td>
+                <input type="checkbox" [formControlName]="problem.title" />
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <input type="button" value="Save" class="save-button" (click)="markDone()" />
+  </div>
+</div>

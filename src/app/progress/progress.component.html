@@ -1,0 +1,32 @@
+<app-nav-bar></app-nav-bar>
+<div class="progress-container">
+    <h2>My DSA Progress</h2>
+  
+    <div *ngFor="let topic of progressData" class="topic-card">
+      <div class="topic-header" (click)="toggleTopic(topic)">
+        <span>{{ topic.topic }}</span>
+        <span class="toggle-icon">{{ topic.expanded ? '−' : '+' }}</span>
+      </div>
+  
+      <div *ngIf="topic.expanded" class="problems-list">
+        <div class="status-section">
+          <h4 class="status-title complete">Completed</h4>
+          <ul>
+            <li *ngFor="let problem of getCompletedProblems(topic)">
+              ✅ {{ problem.title }}
+            </li>
+          </ul>
+        </div>
+  
+        <div class="status-section">
+          <h4 class="status-title incomplete">Incomplete</h4>
+          <ul>
+            <li *ngFor="let problem of getIncompleteProblems(topic)">
+              ❌ {{ problem.title }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
