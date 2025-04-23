@@ -15,7 +15,7 @@ export class TopicService {
       authorization: localStorage.getItem('token') || '', // Replace with your actual token
     });
     return await firstValueFrom(
-      this.http.get('http://backend-yvsj.onrender.com/api/data/allTopics', { headers })
+      this.http.get('https://backend-yvsj.onrender.com/api/data/allTopics', { headers })
     );
   }
 
@@ -26,7 +26,7 @@ export class TopicService {
     });
     return await firstValueFrom(
       this.http.post(
-        'http://backend-yvsj.onrender.com/api/data/progress',
+        'https://backend-yvsj.onrender.com/api/data/progress',
         { email: localStorage.getItem('email') },
         { headers }
       )
@@ -39,7 +39,7 @@ export class TopicService {
       authorization: localStorage.getItem('token') || '', // Replace with your actual token
     });
     return this.http.put<any>(
-      'http://backend-yvsj.onrender.com/api/topics/' + topicId + '/progress',
+      'https://backend-yvsj.onrender.com/api/topics/' + topicId + '/progress',
       {},
       { headers }
     );
@@ -51,7 +51,7 @@ export class TopicService {
       authorization: localStorage.getItem('token') || '', // Replace with your actual token
     });
     return await firstValueFrom(
-      this.http.post('http://backend-yvsj.onrender.com/api/data/update', data, { headers })
+      this.http.post('https://backend-yvsj.onrender.com/api/data/update', data, { headers })
     );
   }
 
