@@ -32,7 +32,9 @@ export class DashboardComponent implements OnInit {
     await this.getTopics();
     await this.getProgress();
     this.initForm();
-    this.formService.loadTopics(this.topicsProgress);
+    this.formService.loadTopics(
+      this.topicsProgress.length > 0 ? this.topicsProgress : this.topics
+    );
   }
 
   initForm() {
@@ -73,8 +75,9 @@ export class DashboardComponent implements OnInit {
   async markDone() {
     let obj = this.topicService.markAsDoneObject(this.topics, this.topicForm);
     console.log(obj);
-    try{
+    try {
       const result = await this.topicService.markAsDone(obj);
+      window.alert('Update successfull');
     } catch (error: any) {
       console.error('Error:', error);
       window.alert(error.error.message);

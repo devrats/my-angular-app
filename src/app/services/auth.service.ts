@@ -8,13 +8,13 @@ export class AuthService {
 
   async register(email: string, password: string): Promise<any> {
     return await firstValueFrom(
-      this.http.post('http://localhost:5000/api/auth/register', { email, password })
+      this.http.post('http://backend-yvsj.onrender.com/api/auth/register', { email, password })
     );
   }
 
   async login(email: string, password: string): Promise<any> {
     return await firstValueFrom(
-      this.http.post('http://localhost:5000/api/auth/login', { email, password })
+      this.http.post('http://backend-yvsj.onrender.com/api/auth/login', { email, password })
     );
   }
 }
